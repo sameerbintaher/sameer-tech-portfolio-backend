@@ -39,6 +39,11 @@ app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/blog", require("./routes/blogRoutes"));
 app.use("/api/lifestyle", require("./routes/lifestyleRoutes"));
 
+// Add a root route
+app.get("/", (req, res) => {
+  res.send("Welcome to the Portfolio Backend!");
+});
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
